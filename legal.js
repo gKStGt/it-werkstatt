@@ -1,0 +1,1 @@
+let mode='dark';try{mode=localStorage.getItem('itw-theme')||'dark'}catch{}const media=matchMedia('(prefers-color-scheme: dark)');function theme(){document.documentElement.dataset.theme=mode==='system'?(media.matches?'dark':'light'):mode==='light'?'light':'dark'}theme();media.addEventListener('change',theme);
