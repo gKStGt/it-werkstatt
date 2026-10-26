@@ -1,6 +1,6 @@
 const $=s=>document.querySelector(s);const $$=s=>[...document.querySelectorAll(s)];
 $$('.close-dialog').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));$$('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close()}}));
-const systemTheme=matchMedia('(prefers-color-scheme: dark)');let chosen='dark';try{chosen=localStorage.getItem('itw-theme')||'dark'}catch{}function applyTheme(mode){if(!['dark','light','system'].includes(mode))mode='dark';chosen=mode;document.documentElement.dataset.theme=mode==='system'?(systemTheme.matches?'dark':'light'):mode;$('.theme-symbol').textContent=mode==='system'?'◐':mode==='dark'?'☾':'☀';$$('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));try{localStorage.setItem('itw-theme',mode)}catch{}}applyTheme(chosen);systemTheme.addEventListener('change',()=>{if(chosen==='system')applyTheme('system')});$('.theme-toggle').addEventListener('click',()=>{$('.theme-menu').hidden=!$('.theme-menu').hidden;$('.theme-toggle').setAttribute('aria-expanded',String(!$('.theme-menu').hidden))});$$('[data-mode]').forEach(b=>b.addEventListener('click',()=>{applyTheme(b.dataset.mode);$('.theme-menu').hidden=true;$('.theme-toggle').setAttribute('aria-expanded','false')}));document.addEventListener('click',e=>{if(!e.target.closest('.theme-menu,.theme-toggle')){$('.theme-menu').hidden=true;$('.theme-toggle').setAttribute('aria-expanded','false')}});document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('.theme-menu').hidden=true;$('.theme-toggle').setAttribute('aria-expanded','false')}});$('.menu-toggle').addEventListener('click',()=>{const open=$('nav').classList.toggle('open');$('.menu-toggle').setAttribute('aria-expanded',String(open))});$$('nav a').forEach(a=>a.addEventListener('click',()=>{$('nav').classList.remove('open');$('.menu-toggle').setAttribute('aria-expanded','false')}));
+const systemTheme=matchMedia('(prefers-color-scheme: dark)');let chosen='light';try{chosen=localStorage.getItem('itw-theme')||'light'}catch{}function applyTheme(mode){if(!['dark','light','system'].includes(mode))mode='dark';chosen=mode;document.documentElement.dataset.theme=mode==='system'?(systemTheme.matches?'dark':'light'):mode;$('.theme-symbol').textContent=mode==='system'?'◐':mode==='dark'?'☾':'☀';$$('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));try{localStorage.setItem('itw-theme',mode)}catch{}}applyTheme(chosen);systemTheme.addEventListener('change',()=>{if(chosen==='system')applyTheme('system')});$('.theme-toggle').addEventListener('click',()=>{$('.theme-menu').hidden=!$('.theme-menu').hidden;$('.theme-toggle').setAttribute('aria-expanded',String(!$('.theme-menu').hidden))});$$('[data-mode]').forEach(b=>b.addEventListener('click',()=>{applyTheme(b.dataset.mode);$('.theme-menu').hidden=true;$('.theme-toggle').setAttribute('aria-expanded','false')}));document.addEventListener('click',e=>{if(!e.target.closest('.theme-menu,.theme-toggle')){$('.theme-menu').hidden=true;$('.theme-toggle').setAttribute('aria-expanded','false')}});document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('.theme-menu').hidden=true;$('.theme-toggle').setAttribute('aria-expanded','false')}});$('.menu-toggle').addEventListener('click',()=>{const open=$('nav').classList.toggle('open');$('.menu-toggle').setAttribute('aria-expanded',String(open))});$$('nav a').forEach(a=>a.addEventListener('click',()=>{$('nav').classList.remove('open');$('.menu-toggle').setAttribute('aria-expanded','false')}));
 // Disclosure navigation: links navigate; separate buttons expand submenus.
 const navigation = $('#main-navigation');
 const navigationGroups = $$('.nav-group');
@@ -92,3 +92,21 @@ document.addEventListener('click',event=>{
     $('.menu-toggle').setAttribute('aria-expanded','false');
   }
 });
+
+// Live availability: Mo-Fr 09:00-18:00 (Europe/Berlin)
+(function(){
+  const strip=document.getElementById('status-strip'),text=document.getElementById('status-text');
+  if(!strip||!text)return;
+  function update(){
+    const p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Berlin',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+    const g=t=>p.find(x=>x.type===t).value;
+    const day=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday'));
+    const mins=Number(g('hour'))%24*60+Number(g('minute'));
+    const work=day>=1&&day<=5;
+    if(work&&mins>=540&&mins<1080){strip.dataset.open='true';text.textContent='Jetzt erreichbar · bis 18:00 Uhr'}
+    else{strip.dataset.open='false';
+      const next=work&&mins<540?'heute 09:00 Uhr':(day===5&&mins>=1080)||day===6?'Montag 09:00 Uhr':day===0?'Montag 09:00 Uhr':'morgen 09:00 Uhr';
+      text.textContent='Gerade geschlossen · wieder erreichbar '+next}
+  }
+  update();setInterval(update,60000);
+})();
