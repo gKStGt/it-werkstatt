@@ -6,8 +6,8 @@
 @font-face{font-family:"JetBrains Mono";src:url('assets/fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
 
 :root,html[data-theme=light]{--serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;--mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
- --bg:#f6f7f9;--surface:#fff;--raised:#fff;--fg:#0f1729;--muted:#475467;--faint:#5b6577;--gold:#8a6a26;--gold-fill:#a6823a;--on-gold:#14110a;--line:#e3e6eb;--header:#f6f7f9e6;--shadow:0 1px 2px #0f17290a,0 10px 28px #0f17290d;--shadow-hover:0 2px 4px #0f17290d,0 16px 36px #0f172914;--gutter:clamp(22px,4.8vw,92px)}
-html[data-theme=dark]{--bg:#0b1120;--surface:#0f172a;--raised:#131c31;--fg:#eef1f6;--muted:#a9b3c6;--faint:#8a95aa;--gold:#d4b16a;--gold-fill:#c9a24f;--on-gold:#14110a;--line:#ffffff1f;--header:#0b1120e6;--shadow:0 1px 2px #0006,0 10px 28px #0004;--shadow-hover:0 2px 4px #0006,0 16px 36px #0006}
+ --bg:#f6f7f9;--surface:#fff;--raised:#fff;--fg:#0f1729;--muted:#475467;--faint:#5b6577;--gold:#1747d6;--gold-fill:#1747d6;--on-gold:#fff;--line:#e3e6eb;--header:#f6f7f9e6;--shadow:0 1px 2px #0f17290a,0 10px 28px #0f17290d;--shadow-hover:0 2px 4px #0f17290d,0 16px 36px #0f172914;--gutter:clamp(22px,4.8vw,92px)}
+html[data-theme=dark]{--bg:#0b1120;--surface:#0f172a;--raised:#131c31;--fg:#eef1f6;--muted:#a9b3c6;--faint:#8a95aa;--gold:#8fb0ff;--gold-fill:#8fb0ff;--on-gold:#0b1120;--line:#ffffff1f;--header:#0b1120e6;--shadow:0 1px 2px #0006,0 10px 28px #0004;--shadow-hover:0 2px 4px #0006,0 16px 36px #0006}
 html body,button,input,summary,select,textarea{font-family:var(--sans)}
 body{background:var(--bg);color:var(--fg);font-size:16px;line-height:1.7;font-weight:400}
 h1,h2,h3,h4{font-family:var(--serif);font-weight:500;letter-spacing:-.012em;text-wrap:balance;color:inherit;overflow-wrap:break-word;hyphens:auto}
@@ -31,8 +31,8 @@ header #main-navigation{gap:8px 22px!important}
 
 /* buttons */
 .button{background:var(--gold-fill);color:var(--on-gold)!important;border:1px solid var(--gold-fill);border-radius:5px;min-height:48px;padding:12px 26px;font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.01em;box-shadow:none;transition:background .15s,border-color .15s}
-.button:hover,.button:focus-visible{background:#b99347;border-color:#b99347;transform:none}
-html[data-theme=dark] .button:hover{background:#d8b45e;border-color:#d8b45e}
+.button:hover,.button:focus-visible{background:#0f35a8;border-color:#0f35a8;transform:none}
+html[data-theme=dark] .button:hover{background:#b3caff;border-color:#b3caff}
 .text-button{display:inline-flex;align-items:center;min-height:48px;padding:12px 24px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--fg);font-size:14px;font-weight:500;text-decoration:none}
 .text-button:hover{border-color:var(--gold-fill);color:var(--fg)}
 .gold-link{font-weight:600;font-size:14px;min-height:44px;display:inline-flex;align-items:center;color:var(--gold);text-decoration:none;border-bottom:1px solid transparent}
@@ -119,8 +119,8 @@ html[data-theme] .check-section .eyebrow{color:var(--gold)}
 /* footer */
 html[data-theme] footer.site-footer{background:#0b1120;border-top:1px solid #ffffff1f;padding-block:36px 40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 40px}
 html[data-theme] footer.site-footer,html[data-theme] footer.site-footer :is(p,a,h2,span,div){color:#dfe4ee}
-html[data-theme] footer.site-footer h2{color:#d4b16a;font-family:var(--mono);letter-spacing:.16em;font-size:12px}
-html[data-theme] footer.site-footer a:hover{color:#d4b16a;text-decoration:underline}
+html[data-theme] footer.site-footer h2{color:#8fb0ff;font-family:var(--mono);letter-spacing:.16em;font-size:12px}
+html[data-theme] footer.site-footer a:hover{color:#8fb0ff;text-decoration:underline}
 .site-footer .brand{background:#fff;padding:6px 10px;border-radius:6px;display:inline-block}
 .site-footer a{min-height:44px}.footer-bottom{font-family:var(--mono);font-size:12px!important;color:#98a2b3}
 .site-footer .footer-identity{display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding:0}.site-footer .footer-identity p{margin:0;font-size:14px;line-height:1.5}
