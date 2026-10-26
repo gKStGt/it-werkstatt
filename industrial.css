@@ -6,8 +6,8 @@
 @font-face{font-family:"JetBrains Mono";src:url('assets/fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
 
 :root,html[data-theme=light]{--serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;--mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
- --bg:#f6f7f9;--surface:#fff;--raised:#fff;--fg:#0f1729;--muted:#475467;--faint:#5b6577;--gold:#1747d6;--gold-fill:#1747d6;--on-gold:#fff;--line:#e3e6eb;--header:#f6f7f9e6;--shadow:0 1px 2px #0f17290a,0 10px 28px #0f17290d;--shadow-hover:0 2px 4px #0f17290d,0 16px 36px #0f172914;--gutter:clamp(22px,4.8vw,92px)}
-html[data-theme=dark]{--bg:#0b1120;--surface:#0f172a;--raised:#131c31;--fg:#eef1f6;--muted:#a9b3c6;--faint:#8a95aa;--gold:#8fb0ff;--gold-fill:#8fb0ff;--on-gold:#0b1120;--line:#ffffff1f;--header:#0b1120e6;--shadow:0 1px 2px #0006,0 10px 28px #0004;--shadow-hover:0 2px 4px #0006,0 16px 36px #0006}
+ --bg:#f6f7f9;--surface:#fff;--raised:#fff;--fg:#0f1729;--muted:#475467;--faint:#5b6577;--gold:#1747d6;--gold-fill:#1747d6;--on-gold:#fff;--green:#2f7d5b;--line:#e3e6eb;--header:#f6f7f9e6;--shadow:0 1px 2px #0f17290a,0 10px 28px #0f17290d;--shadow-hover:0 2px 4px #0f17290d,0 16px 36px #0f172914;--gutter:clamp(22px,4.8vw,92px)}
+html[data-theme=dark]{--bg:#0b1120;--surface:#0f172a;--raised:#131c31;--fg:#eef1f6;--muted:#a9b3c6;--faint:#8a95aa;--gold:#8fb0ff;--gold-fill:#8fb0ff;--on-gold:#0b1120;--green:#6fbf95;--line:#ffffff1f;--header:#0b1120e6;--shadow:0 1px 2px #0006,0 10px 28px #0004;--shadow-hover:0 2px 4px #0006,0 16px 36px #0006}
 html body,button,input,summary,select,textarea{font-family:var(--sans)}
 body{background:var(--bg);color:var(--fg);font-size:16px;line-height:1.7;font-weight:400}
 h1,h2,h3,h4{font-family:var(--serif);font-weight:500;letter-spacing:-.012em;text-wrap:balance;color:inherit;overflow-wrap:break-word;hyphens:auto}
@@ -42,7 +42,7 @@ html[data-theme=dark] .button:hover{background:#b3caff;border-color:#b3caff}
 .status-strip{display:flex;flex-wrap:wrap;align-items:center;gap:4px 24px;padding:9px var(--gutter);background:var(--surface);border-bottom:1px solid var(--line);color:var(--muted);font-family:var(--mono);font-size:12px;letter-spacing:.02em}
 .status-strip a{color:var(--fg);font-weight:500;text-decoration:none;border-bottom:1px solid var(--gold-fill)}
 .status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#98a2b3;margin-right:9px;vertical-align:1px}
-.status-strip[data-open=true] .status-dot{background:#16a34a;box-shadow:0 0 0 4px #16a34a26}
+.status-strip[data-open=true] .status-dot{background:var(--green);box-shadow:0 0 0 4px color-mix(in srgb,var(--green) 22%,transparent)}
 .status-strip[data-open=false] .status-dot{background:#dc5a4f}
 
 /* hero */
@@ -147,3 +147,17 @@ html[data-theme] .check-section :is(p,.body-copy,.check-note){color:var(--muted)
 html[data-theme] .check-section .check-panel :is(h3){color:var(--fg)}
 html[data-theme] .check-section .check-panel{background:var(--raised)}
 html[data-theme=dark] header .brand{background:#fff;border-radius:6px;padding:3px 8px;align-self:center}
+
+/* matte green = "ok / done / included" only */
+.pricing-columns li{display:flex;align-items:baseline;gap:12px}
+.pricing-columns li::before{content:"";flex:none;width:9px;height:5px;border-left:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(-45deg) translateY(-2px)}
+.check-options button[data-answer="0"]{border-left:3px solid var(--green)}
+.check-options button[data-answer="0"]:hover,.check-options button[data-answer="0"]:focus-visible{border-color:var(--green)}
+html[data-theme] .check-section .check-panel.is-clear{border-top-color:var(--green)}
+.check-panel.is-clear h3::before{content:"";display:inline-block;width:22px;height:12px;margin-right:14px;border-left:3px solid var(--green);border-bottom:3px solid var(--green);transform:rotate(-45deg) translateY(-4px)}
+.security-spotlight{border-top:2px solid var(--green)}
+header .brand-logo{height:60px;width:auto;max-height:60px}
+html[data-theme=dark] header .brand{padding:3px 8px}
+@media(max-width:760px){header .brand-logo{height:50px;max-height:50px}}
+header a.brand .brand-logo{width:auto;height:60px;max-height:60px}
+@media(max-width:760px){header a.brand .brand-logo{width:auto;height:50px;max-height:50px}}
