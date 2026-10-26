@@ -1,0 +1,55 @@
+/* IT·WERKSTATT — industrial identity study. Existing content and behavior retained. */
+:root{--bg:#15191b;--surface:#202628;--raised:#293135;--fg:#f4f6f5;--muted:#bac3c5;--faint:#9ca9ae;--gold:#d4b47a;--line:#dbe6e329;--header:#15191bf5;--gutter:clamp(22px,4.8vw,92px)}
+html[data-theme=light]{--bg:#f6f7f6;--surface:#e7ecec;--raised:#d9e1e2;--fg:#152327;--muted:#465b63;--faint:#51676e;--gold:#795a28;--line:#17394230;--header:#f6f7f6f5}
+body{font-feature-settings:'ss01' on;font-size:16px;line-height:1.7}
+h1,h2,h3{text-wrap:pretty}h1{font-weight:800;letter-spacing:-.065em}h2{font-weight:700;letter-spacing:-.035em}h3{letter-spacing:-.02em}
+.eyebrow{font-size:12px!important;letter-spacing:.035em!important;text-transform:none!important;font-weight:600;color:var(--muted)}
+header{height:96px;border-bottom:2px solid var(--line);gap:24px}
+header #main-navigation a{font-size:14px!important}header #main-navigation{gap:8px 18px!important}
+.brand-claim{font-size:11px;letter-spacing:.04em}
+.button{font-weight:700;min-height:48px;padding:13px 24px;border-radius:0;box-shadow:none}
+.text-button,.gold-link{font-size:14px;line-height:1.5;min-height:44px;display:inline-flex;align-items:center}
+.icon-button,.theme-toggle,.nav-expand{min-width:44px;min-height:44px}
+.nav-sub{border-radius:0;border-top:3px solid var(--gold);padding:12px 18px;box-shadow:0 20px 36px #0003}
+.nav-sub a{min-height:44px;display:flex;align-items:center}
+.hero{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(32px,5vw,80px);padding-top:52px;padding-bottom:56px;min-height:700px;align-items:center}
+.hero-copy{position:relative;z-index:1;padding-block:24px}
+.hero h1{font-size:clamp(58px,5.8vw,96px);line-height:1.02;margin:26px 0 32px;max-width:none}
+.hero h1 span{color:var(--fg)}
+.hero .eyebrow{border-left:4px solid var(--gold);padding-left:15px;max-width:32ch}
+.hero-intro{font-size:17px;line-height:1.85;max-width:48ch}
+.hero-actions{gap:24px;margin-top:32px;flex-wrap:wrap}
+.scene-wrap{border:1px solid var(--line);border-bottom:4px solid var(--gold);background:var(--surface);isolation:isolate}
+.room-image{border-radius:0}.room-labels a{border:1px solid #dbe6e355;border-radius:0;background:#182023ed;font-size:12px;color:#f4f6f5;box-shadow:none}
+.room-labels a small{font-size:11px;color:#c6d0d1}
+.principles{gap:22px;margin-top:34px;padding-top:22px}.principles a{font-size:13px;line-height:1.5}.principles small{display:none}
+.technology{padding-block:22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface)}
+.technology>.eyebrow{font-size:12px!important;color:var(--fg)}
+.benefit-band{background:var(--bg);padding-block:38px}.benefit-band h2{font-size:23px;letter-spacing:-.025em}.benefit-band a>span{font-size:12px;color:var(--gold)}
+.section{padding-block:88px}.section-top>p:last-child,.body-copy{max-width:62ch}
+.check-section{background:var(--surface);color:var(--fg);border-block:1px solid var(--line)}
+.check-section .eyebrow,.check-section .check-note{color:var(--muted)}
+.check-section h2{font-size:clamp(40px,4.2vw,62px)}.check-section h2 em{font-style:normal;color:var(--gold)}
+.check-section .button{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.check-panel{border-left:3px solid var(--gold);padding-left:36px}
+.check-options button{color:var(--fg);background:var(--bg);border:1px solid var(--line);min-height:48px;font-size:15px}
+.check-options button:hover,.check-options button:focus-visible{border-color:var(--gold);background:var(--raised)}
+.check-back,.result-note{color:var(--muted)}
+.industry-cards article{border-radius:0;box-shadow:none;background:transparent;border-top:3px solid var(--line);padding:28px 0}
+.card-number{font-size:12px}.industry-cards h3{font-size:28px}.industry-cards p{font-size:15px}
+.service-choice{gap:0;border-block:1px solid var(--line)}.service-choice a{background:var(--surface);border-radius:0;padding:24px;border:0;border-right:1px solid var(--line)}
+.service-choice strong{font-size:17px}.service-choice span{font-size:13px}
+.service-list>a{padding-block:32px}.service-list h3{font-size:clamp(23px,2.6vw,36px)}.service-description p{font-size:15px}
+.service-visual img{border-radius:0}.service-visual figcaption{padding:18px 0;border-bottom:1px solid var(--line)}.service-visual figcaption span{font-size:13px;color:var(--muted)}
+.architecture-node{border-radius:0;background:var(--surface);box-shadow:none}.architecture-node small{font-size:11px}.architecture-node span{font-size:13px}
+.managed-modules article{border-radius:0;box-shadow:none;background:var(--surface);border:0;border-top:3px solid var(--line);padding:28px}
+.managed-modules h4{font-size:23px;line-height:1.35}.managed-modules article>p{font-size:15px}
+summary{min-height:48px;font-size:15px}details>p{font-size:15px;max-width:75ch}
+#security .security-spotlight{border-radius:0;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--gold)}
+#security .security-spotlight::before{display:none}#security .security-feature-icon{border-radius:0;background:transparent}#security .security-kicker{font-size:12px;letter-spacing:.02em}#security .security-features p:not(.security-kicker){font-size:15px}
+.pricing-columns article{border-top:3px solid var(--gold)}.pricing-columns .offer-purpose{font-size:15px}.pricing-note{font-size:14px!important}
+.knowledge summary{font-size:clamp(17px,1.6vw,22px);padding-block:22px}.contact-small{font-size:14px!important}
+footer.site-footer{border-top:3px solid var(--line)}.site-footer a{min-height:44px}.footer-bottom{font-size:12px!important}
+@media(max-width:1120px){header{height:82px}.hero{min-height:0;gap:32px}.hero h1{font-size:clamp(56px,7vw,84px)}header #main-navigation{gap:8px!important}.nav-sub{box-shadow:none;border-top:0}}
+@media(max-width:760px){header{height:78px}.hero{grid-template-columns:1fr;padding-top:24px;padding-bottom:32px;gap:24px}.hero-copy{padding:12px 0 0}.hero h1{font-size:clamp(56px,13vw,86px);max-width:11ch}.hero-intro{font-size:16px}.hero-actions{margin-top:24px;gap:12px 22px}.principles{margin-top:26px;gap:16px}.principles a{font-size:12px}.scene-wrap{max-width:560px;width:100%;justify-self:center}.technology>div{gap:20px}.section{padding-block:56px}.check-panel{border-left:0;border-top:3px solid var(--gold);padding:24px 0 0}.service-choice{grid-template-columns:1fr}.service-choice a{border-right:0;border-bottom:1px solid var(--line)}.service-list>a{padding-block:24px}.industry-cards article{padding:24px 0}.managed-modules article{padding:24px}.benefit-band{padding-block:26px}.benefit-band h2{font-size:22px}.hero .eyebrow{max-width:100%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
