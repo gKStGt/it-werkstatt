@@ -165,3 +165,27 @@ header a.brand .brand-logo{width:auto;height:60px;max-height:60px}
 .wide-visual{margin:40px 0 12px}
 .wide-visual img{width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
 @media(max-width:760px){.wide-visual{margin:28px 0 8px}.wide-visual img{aspect-ratio:4/3}}
+/* diagrams + icons */
+.flow-figure{grid-column:1/-1;margin:48px 0 0}
+.flow{display:grid;grid-template-columns:minmax(0,1fr) 72px minmax(0,1fr) 72px minmax(0,1fr);align-items:stretch;list-style:none;margin:0;padding:0}
+.flow-node{display:flex;flex-direction:column;gap:4px;padding:24px;background:var(--raised);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);color:var(--fg)}
+.flow-node svg{color:var(--gold);margin-bottom:8px}
+.flow-node strong{font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.15}
+.flow-node span{font-size:14px;color:var(--muted)}
+.flow-core{border-top:2px solid var(--gold-fill)}
+.flow-ok{border-top-color:var(--green)}.flow-ok svg{color:var(--green)}
+.flow-link{align-self:center;height:2px;margin:0;background:repeating-linear-gradient(90deg,var(--gold-fill) 0 7px,transparent 7px 13px);position:relative;min-height:2px}
+.flow-link::after{content:"";position:absolute;right:-1px;top:-4px;border-left:8px solid var(--gold-fill);border-top:5px solid transparent;border-bottom:5px solid transparent}
+.flow-merge{grid-template-columns:minmax(0,1.1fr) 72px minmax(0,1fr)}
+.flow-stack{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.flow-stack .flow-node{flex-direction:row;flex-wrap:wrap;align-items:center;gap:2px 16px;padding:18px 22px}
+.flow-stack .flow-node svg{margin:0}
+.flow-stack .flow-node strong{font-size:22px}
+.flow-stack .flow-node span{flex-basis:100%;padding-left:44px;margin-top:-4px}
+.flow-merge>.flow-core{justify-content:center}
+.industry-icon{display:block;color:var(--gold);margin-bottom:18px}
+@media(max-width:900px){
+ .flow,.flow-merge{grid-template-columns:1fr}
+ .flow-link{width:2px;height:40px;min-height:40px;margin:0 auto;background:repeating-linear-gradient(180deg,var(--gold-fill) 0 7px,transparent 7px 13px)}
+ .flow-link::after{right:auto;left:-4px;top:auto;bottom:-1px;border-left:5px solid transparent;border-right:5px solid transparent;border-top:8px solid var(--gold-fill);border-bottom:0}
+}
