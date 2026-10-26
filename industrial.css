@@ -207,3 +207,14 @@ html[data-theme=dark] .ill-w2{fill:#0b1120}html[data-theme=dark] .ill-w3{stroke:
 .ill-map{margin:32px 0 0;max-width:560px}
 .ill-legal{max-width:560px;margin:8px 0 40px}
 @media(max-width:760px){.ill-wide{margin:24px 0 4px}}
+/* icon system: two-tone line icons with a soft disc */
+.ic{display:block;width:48px;height:48px;margin:0 0 18px;flex:none;overflow:visible}
+.ic .ib{fill:var(--gold);opacity:.09}
+.ic .f{fill:none;stroke:var(--fg);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.ic .a{fill:none;stroke:var(--gold);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.ic .ad{fill:none;stroke:var(--gold);stroke-width:4;stroke-linecap:round}
+.service-list h3{display:flex;flex-direction:column;align-items:flex-start}
+.service-list .ic{margin-bottom:14px}
+.process li .ic,.approach-lines p .ic,.benefit-band .ic{margin-bottom:14px}
+.managed-modules article>.ic,.pricing-columns article>.ic{margin-bottom:16px}
+.service-list>a:hover .ic .ib{opacity:.2}
